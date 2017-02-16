@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import Game from './Game.jsx'
 
 export default class App extends Component {
   constructor(props){
@@ -7,7 +8,10 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div>Hangman</div>
+      <div>
+        <div>Hangman</div>
+        <Game />
+      </div>
     )
   }
 }
