@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import Words from './Words.jsx'
 
 
 export default class Game extends Component {
@@ -15,7 +16,15 @@ export default class Game extends Component {
 
   }
 
+  numberGuesses() {
+
+  }
+
   correctGuess() {
+
+  }
+
+  difficultyLevel() {
 
   }
 
@@ -23,7 +32,10 @@ export default class Game extends Component {
 
   render() {
     return (
-      <div> This is the game table </div>
+      <div>
+        <div> This is the game table </div>
+        <Words />
+      </div>
     )
   }
 }
