@@ -36,8 +36,7 @@ export default class Words extends Component {
   render() {
     return (
       <div>
-        <h3> Words Should be here</h3>
-        <div>{this.state.wordsList.length}</div>
+      
       </div>
     )
   }
