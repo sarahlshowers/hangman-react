@@ -2,9 +2,10 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import fetchMethod from './fetchMethod'
 
+
 export default class Words extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       wordsList: [],
       fetchExecuted: false
@@ -12,20 +13,23 @@ export default class Words extends Component {
   }
 
   wordList() {
-    const path = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words`
+    let path = '/linkedin-reach'
     const callback = words => {
+      console.log('these are words?', words)
       this.setState({
         wordsList: words,
         fetchExecuted: true
       })
     }
-    return fetchMethod('GET', path, null).then(callback)
+    return fetchMethod('GET', path, null, callback)
   }
 
-  renderWordList() {
+  componentDidMount() {
+    this.wordList()
     const {wordsList, fetchExecuted} = this.state
+    console.log({wordsList})
     return fetchExecuted
-    ? <Words words={words} />
+    ? wordsList.length
     : null
   }
 
@@ -33,7 +37,7 @@ export default class Words extends Component {
     return (
       <div>
         <h3> Words Should be here</h3>
-        <div>{this.renderWordList()}</div>
+        <div>{this.state.wordsList.length}</div>
       </div>
     )
   }

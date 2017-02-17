@@ -1,20 +1,24 @@
+import 'whatwg-fetch'
+
 export default (method, path, values, callback) => {
   const myHeaders = new Headers()
-  myHeaders.append('Content-Type','application/json')
+  myHeaders.append('Content-Type', 'application/json')
 
   const options = {
-    method: method,
+    method,
     headers: myHeaders,
-    mode: 'cors',
     cache: 'default',
-    credentials: 'same-origin'
+    mode: 'cors'
   }
 
-  if (values) {
-    options.body = JSON.stringify(values)
-  }
-
-  return fetch(path, options)
-    .then(response => response.json())
-    .then(callback)
+  fetch(path, options)
+  .then((response) => {
+    console.log('response before text', response)
+    return response.json()
+  })
+  .then((response) => {
+    console.log('what response?', response, 'rubber baby buggy bumpers')
+    return response
+  })
+  .then(callback)
 }
