@@ -26,6 +26,7 @@
     "express": "^4.14.1",
     "html-loader": "^0.4.4",
     "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
