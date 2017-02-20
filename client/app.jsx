@@ -2,12 +2,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 import _ from 'lodash'
+import GameWord from './components/GameWord.jsx'
 import Game from './components/Game.jsx'
-import wordService from '../services/wordService'
-import {Provider} from 'react-redux'
-import {createStore, dispatch} from 'pure-flux'
-import {connectStore} from 'react-pure-flux'
-import gameReducer from '../reducers/reducers'
 
 
 export default class App extends Component {
@@ -17,8 +13,6 @@ export default class App extends Component {
       secretWord: ''
     }
   }
-
-  // return { store: this.props.store } specify contextTypes
 
   componentDidMount() {
     this.getWord()
@@ -39,14 +33,11 @@ export default class App extends Component {
     return (
       <div>
         <div>Hangman</div>
-        <Game word={this.state.secretWord}/>
+        <Game />
+        <GameWord word={_.sample(this.state.secretWord)}/>
       </div>
     )
   }
 }
 
-ReactDOM.render(
-  <Provider store={createStore('gameReducer', {words: ''})}>
-  <App />
-</Provider>,
-  document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))

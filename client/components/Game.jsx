@@ -1,45 +1,37 @@
-import React, {Component} from 'react'
-import words from '../../models/words'
+import React, {Component, PropTypes} from 'react'
 import GameBoard from './GameBoard.jsx'
+import GameWord from './GameWord.jsx'
 // import Keyboard from './Keyboard.jsx'
 // import LetterSlots from './LetterSlots.jsx'
-import _ from 'lodash'
-import Async from 'react-promise'
 
-// class Word extends Component {
-//   constructor(props) {
-//     super(props)
-//   }
-//   render() {
-//     console.log('do I get words here?', this.props.word)
-//     const word = this.props.word
-//     return(
-//       <ul>{word}</ul>
-//     )
-//   }
-// }
 
 export default class Game extends Component {
   constructor(props) {
     super(props)
+    console.log('the props in my Game', this.props)
   }
-  // componentDidMount() {
-  //   this.newGame()
-  // }
-  //
-  // newGame() {
-  //   let word = new Word
-  //   // console.log('do i get words here??', word)
-  //   let strikes = 0
-  //   let guesses = []
-  //   let over = false
-  //   let won = false
-  //   this.setState({word, strikes, guesses, over, won})
-  //   console.log(this.props.word)
-  //   console.log(strikes)
-  //   console.log(guesses)
-  //   console.log(over)
-  // }
+
+  secretKeeperWord() {
+    return <GameWord word={this.props.word}/>
+  }
+
+  componentDidMount() {
+    this.newGame()
+  }
+
+  newGame() {
+    console.log('word?', this.secretKeeperWord())
+    let word = this.secretKeeperWord()
+    let strikes = 0
+    let guesses = []
+    let over = false
+    let won = false
+    this.setState({word, strikes, guesses, over, won})
+    console.log('word?', this.props.word)
+    console.log('strikes?', strikes)
+    console.log('guesses?', guesses)
+    console.log('game over?',over)
+  }
 //
 //   hasWon() {
 //     let {word, guesses} = this.state
@@ -106,7 +98,7 @@ export default class Game extends Component {
           New Game
         {/* </button> */}
         <div>This is a game right?</div>
-        {/* {this.props.store.words} */}
+        {/* {this.props.word} */}
       </div>
     )
   }

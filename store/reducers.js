@@ -8,7 +8,7 @@ const getWord = (
 ) => {
   switch (action.type) {
     case GAME_START:
-    return action.payload
+    return _.sample(words)
     default:
     return state
   }
