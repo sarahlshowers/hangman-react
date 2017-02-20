@@ -17,7 +17,7 @@ const urlLinkedin = 'http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk
 
 app.get('/linkedin-reach', (request, response) => {
   rp('http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words')
-    .then(results => response.json(results))
+    .then(results => response.send(results))
 })
 
 app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')))
