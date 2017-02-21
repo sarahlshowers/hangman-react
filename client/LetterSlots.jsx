@@ -22,15 +22,15 @@ export default class LetterSlots extends Component{
     )
   }
 
-  getSlots() {
-    let letters = this.props.word.split('');
-    return letters.map(this.getSlot);
-  }
+  // getSlots() {
+  //   let letters = this.props.word.split('');
+  //   return letters.map(this.getSlot);
+  // }
 
   render() {
     return (
       <div className='letter-slots'>
-        {this.getSlots()}
+        {/* {this.getSlots()} */}
       </div>
     )
   }

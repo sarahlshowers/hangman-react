@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 import _ from 'lodash'
-import GameWord from './components/GameWord.jsx'
-import Game from './components/Game.jsx'
+import Game from './Game.jsx'
 
 
 export default class App extends Component {
@@ -33,8 +32,7 @@ export default class App extends Component {
     return (
       <div>
         <div>Hangman</div>
-        <Game />
-        <GameWord word={_.sample(this.state.secretWord)}/>
+        <Game word={_.sample(this.state.secretWord)}/>
       </div>
     )
   }
