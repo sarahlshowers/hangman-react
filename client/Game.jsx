@@ -7,7 +7,7 @@ export default class Game extends Component {
     return(
       <div>
         {this.props.word}
-      <button onclick={this.newGame()}>
+      <button onClick={this.newGame}>
       </button>
     </div>
     )
@@ -18,22 +18,11 @@ class GameLogic extends Component {
   constructor(props) {
     super(props)
     console.log('the props in my Game', props)
-    let word
-    let strikes
     let guesses
-    let over
-    let won
     this.state = {
-      word: this.props.word,
-      strikes: 0,
       guesses: [],
-      over: false,
-      won: false
     }
-    console.log('word?', word)
-    console.log('strikes?', strikes)
     console.log('guesses?', guesses)
-    console.log('game over?',over)
   }
 
   componentWillMount() {
@@ -41,7 +30,7 @@ class GameLogic extends Component {
   }
 
   newGame() {
-    this.setState({word, strikes, guesses, over, won})
+    this.setState({guesses})
   }
 
   getSlot(letter, index) {
@@ -63,6 +52,7 @@ class GameLogic extends Component {
   }
 
   getSlots() {
+    console.log('words?', this.props.word)
     let letters = this.props.word.split('');
     return letters.map(this.getSlot);
   }
@@ -114,7 +104,7 @@ newGameClass() {
           won={this.state.won}
           strikes={this.state.strikes}
         />
-        <div className='letter-slots'>
+        <div className='letter-slot'>
           {this.getSlots()}
         </div>
         <Keyboard
