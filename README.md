@@ -9,17 +9,17 @@
 
 Specs
 
-[] `GET` all from the api: http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words
-[] User should see total number of letters in the secret word as represented by underscores.
-[] User wins the game after guessing all correct letters without meeting the losing condition.
-[] User loses the game after guessing incorrectly 6 times.
-[] User can see the correct guesses while not seeing the remainder of the secret word.
-[] List of incorrect guesses is displayed.
+- [ ] `GET` all from the api: http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words
+- [ ] User should see total number of letters in the secret word as represented by underscores.
+- [ ] User wins the game after guessing all correct letters without meeting the losing condition.
+- [ ] User loses the game after guessing incorrectly 6 times.
+- [ ] User can see the correct guesses while not seeing the remainder of the secret word.
+- [ ] List of incorrect guesses is displayed.
 
 Extensions
-[ ] Configure the difficulty level for the game
-[ ] Create a hangman diagram
-[ ] Support for guessing full word
-[ ] Multiplayer with socket.io
+- [ ] Configure the difficulty level for the game
+- [ ] Create a hangman diagram
+- [ ] Support for guessing full word
+- [ ] Multiplayer with socket.io
 
   
