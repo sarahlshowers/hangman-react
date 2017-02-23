@@ -27,7 +27,7 @@ class Game extends Component {
   }
 }
 
-const wrapper = mount(<App />, <Game />) // mount/render/shallow when applicable
+const wrapper = mount(<App />, <Game />) 
 
 expect(wrapper).to.containMatchingElement(<Game word='wetly' />)
 expect(wrapper).to.not.containMatchingElement(<Game word='12345' />)
