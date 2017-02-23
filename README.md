@@ -19,8 +19,9 @@ Specs
 Extensions
 - [ ] User can configure the difficulty level for the game
 - [ ] User can see a hangman diagram
-- [ ] User can guess a full word
+- [ ] User can guess phrases and words
 - [ ] User can play in Multiplayer mode
+- [ ] User can see their score and a leaderboard(multiplayer mode)
 
 
 ## Project Summary
