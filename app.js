@@ -20,6 +20,13 @@ app.get('/linkedin-reach', (request, response) => {
     .then(results => {response.send(results)})
 })
 
+const wordsDifficulty = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty=${level}&minLength=${minWordLength}`
+
+app.get('/linkedin-reach/difficulty', (request, response) => {
+  request(wordsDifficulty)
+  .then(results => {response.send(results)})
+})
+
 app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
