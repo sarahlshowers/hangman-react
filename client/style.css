@@ -1,8 +1,18 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+.HangManMan img {
+  size: 200px;
+  justify-content: center;
+}
+
+.keyboard {
+  font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

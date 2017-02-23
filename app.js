@@ -9,15 +9,15 @@ const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config.js')
-const rp = require('request-promise')
+const request = require('request-promise')
 
 const app = express()
 
-const urlLinkedin = 'http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words'
+const gameWords = 'http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words'
 
 app.get('/linkedin-reach', (request, response) => {
-  rp('http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words')
-    .then(results => response.send(results))
+  request(gameWords)
+    .then(results => {response.send(results)})
 })
 
 app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')))
