@@ -9,7 +9,8 @@ a {
 }
 
 .HangManMan img {
-  size: 200px;
+  width: 400px;
+  height: 400px;
   justify-content: center;
 }
 

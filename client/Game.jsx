@@ -34,7 +34,7 @@ export default class HangManGame extends Component {
       <HangManMan onGuess={this.onGuess} />
       <Keyboard onPress={this.onGuess} enabled={!this.gameWon && !this.gameOver}/>
       Steps Until Your Demise! {gameLogic.badGuesses().length}
-    <br></br>
+      <br></br>
       {gameLogic.gameOver()}
       Letters to your doom ---> {gameLogic.badGuesses()}
       <br></br>
