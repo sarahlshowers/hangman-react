@@ -56,5 +56,6 @@ Extensions
 - README.md: You're reading this, which is awesome and much appreciated.
 
 **Branches**:
-difficulty-levels
-    I do want to devlop this further, which should not take me too much longer, since the API is made up of words that increase the difficulty exponentially, and it would be good to have difficulty selection to make the game playable for all levels.
+***difficulty-levels***
+
+I do want to devlop this further, which should not take me too much longer, since the API is made up of words that increase the difficulty exponentially, and it would be good to have difficulty selection to make the game playable for all levels.
