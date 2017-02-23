@@ -80,6 +80,12 @@ class HangManGameLogic {
     )
   }
 
+  getDifficulty() {
+    let path = '/linkedin-reach/difficulty'
+    return $.ajax({ method: 'get', url: path, contentType: 'text/plain' })
+      .then(result => {}
+  }
+
   gameWon() {
     return this.letters.every(letter =>
     this.guesses.includes(letter)
