@@ -9,23 +9,23 @@ const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config.js')
-const request = require('request-promise')
+const rp = require('request-promise')
 
 const app = express()
 
-const gameWords = 'http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words'
+const gameWords = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words`
 
 app.get('/linkedin-reach', (request, response) => {
-  request(gameWords)
+  rp(gameWords)
     .then(results => {response.send(results)})
 })
 
-const wordsDifficulty = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty=${level}&minLength=${minWordLength}`
-
-app.get('/linkedin-reach/difficulty', (request, response) => {
-  request(wordsDifficulty)
-  .then(results => {response.send(results)})
-})
+// const wordsDifficulty = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty=${level}&minLength=${minWordLength}`
+//
+// app.get('/linkedin-reach/difficulty', (request, response) => {
+//   request(wordsDifficulty)
+//   .then(results => {response.send(results)})
+// })
 
 app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')))
 app.use(logger('dev'))

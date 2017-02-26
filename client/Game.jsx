@@ -27,18 +27,26 @@ export default class HangManGame extends Component {
 
   render() {
     const gameLogic = this.gameLogic()
+    const badGuessMessage = ['you are toast', 'the time is near', 'say your prayers', 'the zombies are going to eat you', 'you are in trouble', 'okay seriously ']
 
     return <div className="HangManGame">
       <HangManMan stageOfDeath={gameLogic.badGuesses().length} />
       <HangManWord letters={gameLogic.letters} guesses={gameLogic.guesses} />
       <HangManMan onGuess={this.onGuess} />
       <Keyboard onPress={this.onGuess} enabled={!this.gameWon && !this.gameOver}/>
-      Steps Until Your Demise! {gameLogic.badGuesses().length}
+      {/* MAX_BAD_GUESSES - gameLogic.badGuesses().length + 1 */}
+      Steps Until Your Demise! {MAX_BAD_GUESSES - gameLogic.badGuesses().length + 1}
+      <div>
+        {badGuessMessage[MAX_BAD_GUESSES - gameLogic.badGuesses().length + 1]}
+      </div>
       <div>
         {gameLogic.gameOver()}
       </div>
       <div>
         Letters to your doom ---> {gameLogic.badGuesses()}
+      </div>
+      <div>
+        {this.props.word}
       </div>
     </div>
   }
@@ -63,6 +71,7 @@ const HangManMan = ({stageOfDeath}) => {
     src={`/images/hangman-${stageOfDeath}.png`}
   />
 }
+
 
 const MAX_BAD_GUESSES = 5
 
@@ -100,8 +109,8 @@ const ROW_ONE = 'abcdefghijklm'.split('')
 const ROW_TWO = 'nopqrstuvwxyz'.split('')
 
 class Keyboard extends Component {
-
   handleClick(letter) {
+    console.log('props here?', this)
     if (this.props.enabled) {
       this.props.onPress(letter)
     }
