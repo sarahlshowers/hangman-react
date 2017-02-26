@@ -5,6 +5,7 @@ const favicon = require('serve-favicon')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
+
 const webpack = require('webpack')
 const webpackMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
@@ -12,6 +13,31 @@ const config = require('./webpack.config.js')
 const rp = require('request-promise')
 
 const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
+
+io.on('connection', function(client) {
+  console.log('A client connected')
+
+  client.emit('welcome')
+
+  io.emit('newClientConnected', client.id)
+
+  client.on('newClientConnected', function (data){
+    console.log('A new client with id', data, 'connected to the server')
+  })
+
+  client.on('makeAnnouncement', function (data) {
+
+    io.emit('announcement', data)
+  })
+
+  client.on('disconnect', function () {
+    io.emit('clientDisconnected', client.id)
+  })
+
+  server.listen(3000)
+})
 
 const gameWords = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words`
 
