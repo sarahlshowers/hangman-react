@@ -28,6 +28,7 @@ export default class App extends Component {
       })
   }
 
+  Looking here, I now know how to beat the game but when I do, nothing happens
   render() {
     let word = _.sample(this.state.secretWords) || 'ah'
     return (
