@@ -20,6 +20,12 @@ app.get('/linkedin-reach', (request, response) => {
     .then(results => {response.send(results)})
 })
 
+/**
+ * Even though it was your intention to extend the app, I would avoid leaving commented out code or make sure it is clearly marked as a TODO, otherwise it just kind of looks like you forgot about it
+ * To go a little above and beyond, you could even create and issue for it and link it to here.
+ * TODO >> Implement difficulty level
+ */
+
 // const wordsDifficulty = `http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty=${level}&minLength=${minWordLength}`
 //
 // app.get('/linkedin-reach/difficulty', (request, response) => {
@@ -27,6 +33,10 @@ app.get('/linkedin-reach', (request, response) => {
 //   .then(results => {response.send(results)})
 // })
 
+
+/**
+ * +1 favicon goodness
+ */
 app.use(favicon(path.join(__dirname, 'client', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
