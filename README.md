@@ -6,6 +6,7 @@
 2. Then `npm install` to get all dependencies.
 3. Run with `npm start`
 4. Type in `localhost:3000` to play the game on your browser (preferably Chrome)
+Why Chrome? I would expect this to work in all modern browsers; Safari, Chrome, Firefox, IE and Edge (perferable at least current version -1)
 
 Specs
 
@@ -22,7 +23,7 @@ Extensions
 - [ ] User can guess phrases and words
 - [ ] User can play in Multiplayer mode
 - [ ] User can see their score and a leaderboard(multiplayer mode)
-
+- [ ] Offline mode (API is no longer available so game cannot be played, how can you work around this?)
 
 ## Project Summary
 
@@ -33,6 +34,7 @@ Extensions
 - Backend: Express/Node.js, Webpack
 - Frontend: ReactJS
 - Testing: Mocha/Chai/Enzyme
+
 
 **File Structure**:
 - bin
@@ -58,5 +60,5 @@ Extensions
 
 **Branches**:
 ***difficulty-levels***
-
+Watch typos and spelling - this is your interviewers first impression of you! Proof read, use spell checker, have someone review it
 I do want to devlop this further, which should not take me too much longer, since the API is made up of words that increase the difficulty exponentially, and it would be good to have difficulty selection to make the game playable for all levels.
