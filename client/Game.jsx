@@ -12,7 +12,16 @@ export default class HangManGame extends Component {
     }
   }
 
+  newGame() {
+    console.log("do i work?")
+    return new HangManGame(
+      this.props.word,
+      this.state.guesses,
+    )
+  }
+
   gameLogic() {
+    console.log("do i work again?")
     return new HangManGameLogic(
       this.props.word,
       this.state.guesses,
@@ -48,6 +57,7 @@ export default class HangManGame extends Component {
       <div>
         {this.props.word}
       </div>
+      <button onClick={() => {this.newGame()}}>Restart Game</button>
     </div>
   }
 }
@@ -103,6 +113,8 @@ class HangManGameLogic {
   gameOver() {
     return this.gameWon() || this.gameLost()
   }
+
+
 }
 
 const ROW_ONE = 'abcdefghijklm'.split('')
