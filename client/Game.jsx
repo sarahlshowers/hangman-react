@@ -3,9 +3,11 @@ import $ from 'jquery'
 import _ from 'lodash'
 
 
+Soooo much extra whitespace - I would clean this up
 export default class HangManGame extends Component {
   constructor(props) {
     super(props)
+    Did you mean to leave this console.log in here? Guessing not.
     console.log('what are my props?', this.props)
     this.state = {
       guesses: []
@@ -105,11 +107,15 @@ class HangManGameLogic {
   }
 }
 
+  
+ I'd be inclined to create a separate component for the keyboard interface. Yes, game logic needs to know about the input *BUT* is it part of the logic of the game? Something to think about!
 const ROW_ONE = 'abcdefghijklm'.split('')
 const ROW_TWO = 'nopqrstuvwxyz'.split('')
 
 class Keyboard extends Component {
+  Why only click? Not great UX if I can't use the keyboard here
   handleClick(letter) {
+    Another one, be very careful leaving debugging tools in your code like this
     console.log('props here?', this)
     if (this.props.enabled) {
       this.props.onPress(letter)
